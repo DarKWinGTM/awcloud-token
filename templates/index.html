@@ -1,0 +1,267 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Control Panel - {{IP}}</title>
+	<link
+		rel 			= "canonical"
+		href 			= "https://getbootstrap.com/docs/5.0/examples/sticky-footer/"
+	>
+	<link
+		href 			= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+		crossorigin 	= "anonymous"
+	>
+	<script
+		src 			= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity 		= "sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin 	= "anonymous"
+	></script>
+	<!--
+		link 
+		href 	= "/your-path-to-fontawesome/css/fontawesome.css" 
+		rel 	= "stylesheet"
+	-->
+	<script type=text/javascript>
+		var s   = document.createElement('script'); 
+    s.setAttribute('type', 'text/javascript'); 
+    s.setAttribute('src', '/js/contoller.js'); 
+    document.head.appendChild(s);
+	</script>
+	<!-- https://notifyjs.jpillora.com/ -->
+	<script type=text/javascript>
+		var s   = document.createElement('script'); 
+    s.setAttribute('type', 'text/javascript'); 
+    s.setAttribute('src', '/js/notify.js'); 
+    document.head.appendChild(s);
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+	</script>
+	<style type="text/css">
+		:root {
+			--bs-font-sans-serif: system-ui !important;
+			--bs-font-monospace: system-ui !important;
+		}
+
+		.listscroll {
+			max-height: 500px;
+			width: 800px;
+			margin-left: 20px;
+			overflow: scroll;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		body,
+		b,
+		span,
+		th,
+		td {
+			background-color: #191f28 !important;
+			color: #eee;
+		}
+
+		b,
+		span,
+		th,
+		td {
+			background-color: #191f28 !important;
+			color: #eee;
+			text-align: center;
+		}
+
+
+		thead,
+		tr,
+		td,
+		th {
+			border: 5px solid rgb(141, 197, 63) !important;
+			border-radius: 25px;
+			color: #fff;
+			height: 100%;
+			max-height: 430px;
+			font-size: large !important;
+		}
+
+
+		.bar-free {
+			background-color: #198754 !important;
+		}
+
+		.bar-warning {
+			background-color: #fd7e14 !important;
+		}
+
+		.bar-error {
+			background-color: #dc3545 !important;
+		}
+
+
+		#form-panel {
+			margin-top: -49.6% !important;
+		}
+
+		span,
+		pre {
+			margin-top: 0 !important;
+			margin-bottom: 0rem !important;
+			overflow: auto !important;
+			font-size: 1.0em !important;
+		}
+
+		table {
+			counter-reset: rowNumber;
+		}
+
+		table tr[id*=\.wam] {
+			counter-increment: rowNumber;
+		}
+
+
+		button[value*=PAUSE] {
+			background-color: #0d6efd !important;
+		}
+
+		button[value*=RERUN] {
+			background-color: #f40404 !important;
+		}
+
+
+    table tr td:first-child::before {
+        content: counters(rowNumber, "", decimal-leading-zero); /*! counter(rowNumber) !*/
+        min-width: 2em;
+        margin-right: 0.2em;
+    }
+
+		/*! , th, tr td span    !*/
+
+		/*! Blink Animation !*/
+    @keyframes fade {
+        from {
+          opacity: 1.0;
+          background-color: red;
+          border-color: red;
+        }
+        50% {
+          opacity: 0.1;
+          background-color: rgb(141, 197, 63) !important;
+          border-color: rgb(141, 197, 63) !important;
+        }
+        to {
+          opacity: 1.0;
+          background-color: #0d6ef;
+          border-color: #0d6efd;
+        }
+    }
+    @-webkit-keyframes fade {
+        from {
+          opacity: 1.0;
+          background-color: red;
+          border-color: red;
+        }
+        50% {
+          opacity: 0.1;
+          background-color: #ffc107;
+          border-color: #ffc107;
+        }
+        to {
+          opacity: 1.0;
+          background-color: #0d6ef;
+          border-color: #0d6efd;
+        }
+    }
+    .blink {
+      animation:fade 800ms infinite;
+      -webkit-animation:fade 800ms infinite;
+      background-color: rgb(141, 197, 63);
+      border-color: rgb(141, 197, 63);
+    }
+		/*! Blink Animation !*/
+
+	</style>
+</head>
+
+<body class="d-flex flex-column h-100">
+	<div class="d-flex justify-content-center" id="FlowChart" style="
+        width 	: 100%; 
+        height 	: 0%;
+        ">
+	</div>
+	<div class="container-fluid">
+		<div style="overflow-x:auto;">
+			<table cellpadding="0" class="table table-bordered table-striped table-responsive" id="d_table" style="zoom: 0.9; width: 100%; ">
+				<thead>
+					<th
+						colspan   = "9"
+						style     = "
+							background-color    : rgb(141, 197, 63) !important;
+							color               : black;
+							border              : 0px !important;
+							border-radius       : 1px !important;
+							font-family         : sans-serif;
+							font-size           : large;
+						"
+					><div class="d-flex justify-content-center" style="">v0.0151.10</div>
+					</th>
+					<tr>
+						<th class="col-md text-nowrap" scope="col"># WAXID</th>
+						<th class="col-md text-nowrap" scope="col">EMAIL</th>
+						<th class="col-md text-nowrap" scope="col">2FA</th>
+						<th class="col-md text-nowrap" scope="col">SECRET</th>
+						<th class="col-md text-nowrap" scope="col">BACKUP</th>
+						<th class="col-md text-nowrap" scope="col">STATUS</th>
+						<th class="col-md text-nowrap" scope="col">ACTION</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+	  <div class="progress justify-content-center my-1">
+	  	<div class="progress-bar" role="progressbar" style="width: 0%; text-align: center;" aria-valuemin="0"   aria-valuemax="1000"
+	  	 id="time_pg" aria-valuenow="0" description="https://jsfiddle.net/bozdoz/fSLdG/2/"></div>
+	  </div>
+    
+		<br>
+
+	  <div class="row justify-content-md-center" id="bar">
+	  	<div class="col-md-auto">
+	  		<!-- form action="#ADD" onsubmit="return false" class="row row-cols-auto needs-validation" validate>
+	  			<div class="input-group">
+	  				<input type="email" class="form-control" placeholder="email@gmai.com" aria-label="ADD EMAIL" required>
+	  				<input type="password" class="form-control" placeholder="PASSW *********" aria-label="ADD PASSW" required>
+	  				<input type="text" class="form-control" placeholder="SECRET XXXXXXXX" aria-label="ADD SECRET" required>
+	  				<input type="text" class="form-control" placeholder="BACKUP XXXXXXXX" aria-label="ADD BACKUP">
+	  				<input type="text" class="form-control" placeholder="WAXID xxxxx.wam" aria-label="ADD WAXID" required>
+	  				<button type="submit" class="btn btn-primary add">ADD</button>
+	  			</div>
+	  		</form -->
+	  	</div>
+	  	<div class="col-md-auto">
+	  		<form action="#DEL" onsubmit="return false" class="row row-cols-auto needs-validation" validate>
+	  		<div class="input-group">
+	  			<input type="text" class="form-control" placeholder="WAXID xxxxx.wam" aria-label="DEL WAXID" required>
+	  			<button type="submit" class="btn btn-primary del">DEL</button>
+	  		</div>
+	  		</form>
+	  	</div>
+	  </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <button class="btn btn-primary ren" type="submit">RENEW</button>
+        <button class="btn btn-primary res" type="submit">RESET</button>
+      </div>
+    </div>
+  </div>
+	
+  <footer class="footer mt-auto py-3 bg-light" style="opacity: 0;">
+    <div class="container">
+    </div>
+  </footer>
+  
+</body>
+<script>
+	var tooltipList = [].slice.call(
+		document.querySelectorAll('[data-bs-toggle="tooltip"]')
+	).map(function (ttel){
+		return new bootstrap.Tooltip(ttel)
+	}); 
+</script>
+</html>

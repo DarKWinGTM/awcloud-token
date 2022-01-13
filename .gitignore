@@ -1,0 +1,17 @@
+main.py
+source.py
+*.source
+*.source.html
+*.source.md
+*.source.py
+*.source.json
+awcloud.py
+poetry.lock
+.breakpoints
+main.source.build
+*.key
+*.log
+/node_modules
+/node_modules/*
+/static/log
+/static/log/*
